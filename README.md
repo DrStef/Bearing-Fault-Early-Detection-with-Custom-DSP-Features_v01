@@ -11,7 +11,17 @@ Key objectives:
 
 ## Démo Vidéo – Détection Précoce (130 Mo)
 
+### Détection ultra-précoce du défaut – Vidéo complète avec son
 
+<video width="100%" controls autoplay loop muted>
+  <source src="https://github.com/DrStef/Bearing-Fault-Early-Detection-with-Custom-DSP-Features_v01/raw/main/bearing_videos/EM_bearing1_f3_surframes_v04_lowdef.mp4" type="video/mp4">
+  Votre navigateur ne supporte pas la vidéo.
+</video>
+
+**Le défaut devient visible à l’œil nu dès la super-frame ~460** (vers 23 minutes dans la vidéo).  
+Kalman confirme l’alarme persistante à la super-frame ~465–470.
+
+→ Aucun faux positif. Aucune configuration complexe. Juste un modèle physique + un Kalman.
 
 
 
