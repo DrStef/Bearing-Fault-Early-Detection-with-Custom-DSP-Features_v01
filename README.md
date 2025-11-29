@@ -18,6 +18,12 @@ Key objectives:
   Votre navigateur ne supporte pas la vidéo.
 </video>
 
+### Démo Vidéo – Détection Précoce du Défaut (24 Mo)
+
+[![Clique pour télécharger et jouer la vidéo](https://github.com/DrStef/Bearing-Fault-Early-Detection-with-Custom-DSP-Features_v01/raw/main/bearing_videos/EM_bearing1_f3_surframes_v04_lowdef.mp4)](https://github.com/DrStef/Bearing-Fault-Early-Detection-with-Custom-DSP-Features_v01/raw/main/bearing_videos/EM_bearing1_f3_surframes_v04_lowdef.mp4)
+
+
+*Le défaut devient visible à l’œil nu dès la super-frame ~460. Téléchargez pour visionner avec son (24 Mo).*
 **Le défaut devient visible à l’œil nu dès la super-frame ~460** (vers 23 minutes dans la vidéo).  
 Kalman confirme l’alarme persistante à la super-frame ~465–470.
 
