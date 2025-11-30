@@ -101,7 +101,7 @@ Results are summarized in the table below and show that even simple statistical 
 
 | <img src="results/LSTM_on_STD_EM.png" width="600" alt="FFT frame">  | <img src="results/Arima_anomaly_detection_EMb.png" width="600" alt="FFT frame">  |               
 |:-----------------------------------------------------------:|:-----------------------------------------------:|
-|    <i> LSTM Predictor on STD </i>                    |   <i> ARIMA Anomaly Detection – STD </i>  |
+|    <i> LSTM Predictor on STD <br> Defect detected at superframe 530  </i>                    |   <i> ARIMA Anomaly Detection – STD <br> Defect detected at frame 534</i>  |
 
 <br>
 
@@ -152,7 +152,7 @@ The harmonic Kalman filter not only confirms the defect at super-frame 525 (459 
 
 | <img src="results/kalman_reference_model_with_harmonics.png" width="600" alt="FFT frame">  | <img src="results/advanced_kalman_score_restrict_3k_7k.png" width="600" alt="FFT frame">  |               
 |:-----------------------------------------------------------:|:-----------------------------------------------:|
-|    <i> Harmonic Kalman model (FFT) </i>                    |   <i> Kalman score on residual - 3kHz-7kHz </i>  |
+|    <i> Harmonic Kalman model (FFT) <br> Magnitude only (the model is complex) </i>                    |   <i> Kalman score on residual - 3kHz-7kHz <br> Defect detected at super-frame 525 </i>  |
 
 
 
