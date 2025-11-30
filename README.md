@@ -19,6 +19,7 @@ The NASA IMS Bearing dataset is known for strong **cross-bearing vibration trans
 
 Future work may extend the approach to multi-channel or cross-bearing detection.
 
+TEST VIDEOS  (under construction). 
 
 [![Watch the video](https://raw.githubusercontent.com/DrStef/Bearing-Fault-Early-Detection-with-Custom-DSP-Features_v01/main/bearing_videos/thumbnail.png)](https://raw.githubusercontent.com/DrStef/Bearing-Fault-Early-Detection-with-Custom-DSP-Features_v01/main/bearing_videos/EM_bearing1_f3_surframes_v04_lowdef.mp4)
 
