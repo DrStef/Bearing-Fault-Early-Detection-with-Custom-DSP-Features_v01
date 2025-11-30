@@ -23,11 +23,13 @@ This notebook explores classical time series analysis methods for feature extrac
 The notebook demonstrates how these methods can detect early fault signatures with minimal computational overhead.
 
 
-#### Statistics
+### Statistics
 
-Mean, std, skewness, kurtosis of 984 frames.  
-<img src="results/Time_Series_Statistics.png" width="800" alt="984 frames - Statistics">
+Mean, standard deviation, skewness and kurtosis computed on each 3-second super-frame (982 overlapping windows).
 
+|            <img src="results/Time_Series_Statistics.png" width="600" alt="984 frames - Statistics">      |
+|:---------------------------------------------------------------------------------------------------------:|
+|    <i>Temporal Evolution of Statistical Features Across the 984 Super-Frames </i>                    |
 
 
 
