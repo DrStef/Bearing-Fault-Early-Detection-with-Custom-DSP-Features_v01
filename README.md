@@ -19,7 +19,7 @@ The NASA IMS Bearing dataset is known for strong **cross-bearing vibration trans
 
 Future work may extend the approach to multi-channel or cross-bearing detection.
 
-[![Watch the video](https://img.youtube.com/vi/EBdf1oiCXeE/0.jpg)]([https://www.youtube.com/watch?v=EBdf1oiCXeE])
+[![Watch the video](https://img.youtube.com/vi/EBdf1oiCXeE/0.jpg)](https://www.youtube.com/watch?v=EBdf1oiCXeE)
 
 Early fault signatures appear **well before** frames 530–540 – visible in both magnitude and phase.
 
