@@ -8,30 +8,6 @@ Key objectives:
 - Compare traditional and adaptive transform-based approaches for improved sensitivity and accuracy.
 - Provide reproducible code for researchers and practitioners in mechanical engineering and machine learning.
 
-
-## Démo Vidéo – Détection Précoce (130 Mo)
-
-### Détection ultra-précoce du défaut – Vidéo complète avec son
-
-<video width="100%" controls autoplay loop muted>
-  <source src="https://github.com/DrStef/Bearing-Fault-Early-Detection-with-Custom-DSP-Features_v01/raw/main/bearing_videos/EM_bearing1_f3_surframes_v04_lowdef.mp4" type="video/mp4">
-  Votre navigateur ne supporte pas la vidéo.
-</video>
-
-### Démo Vidéo – Détection Précoce du Défaut (24 Mo)
-
-[![Clique pour télécharger et jouer la vidéo](https://github.com/DrStef/Bearing-Fault-Early-Detection-with-Custom-DSP-Features_v01/raw/main/bearing_videos/EM_bearing1_f3_surframes_v04_lowdef.mp4)](https://github.com/DrStef/Bearing-Fault-Early-Detection-with-Custom-DSP-Features_v01/raw/main/bearing_videos/EM_bearing1_f3_surframes_v04_lowdef.mp4)
-
-## Détection Précoce du Défaut – Vidéo Complète (24 Mo)
-
-[Ouvrir la vidéo dans le navigateur (son + HD)](https://github.com/DrStef/Bearing-Fault-Early-Detection-with-Custom-DSP-Features_v01/raw/main/bearing_videos/EM_bearing1_f3_surframes_v04_lowdef.mp4)
-
-*Le défaut devient visible à l’œil nu dès la super-frame ~460 (vers 23 minutes dans la vidéo).*
-
-→ Aucun faux positif. Aucune configuration complexe. Juste un modèle physique + un Kalman.
-
-
-
 ## Methods
 
 The analysis is divided into two notebooks, each focusing on distinct DSP techniques.
@@ -46,12 +22,28 @@ This notebook explores classical time series analysis methods for feature extrac
 
 The notebook demonstrates how these methods can detect early fault signatures with minimal computational overhead.
 
-### Notebook II: CWT and aT-CWT
 
-This notebook implements wavelet-based transforms for enhanced fault detection in non-stationary signals. Key components include:
-- Continuous Wavelet Transform (CWT) for multi-resolution analysis of vibration spectra, using complex Morlet wavelets to capture transient fault impulses.
-- Adaptive Time-Coherent Continuous Wavelet Transform (aT-CWT), a custom extension that adjusts wavelet parameters dynamically based on signal characteristics to improve resolution in varying speed conditions.
-- Feature selection from scalograms, followed by integration with classifiers like CNN autoencoders for anomaly detection.
+#### Statistics
+
+Mean, std, skewness, kurtosis of 984 frames.  
+<img src="results/Time_Series_Statistics.png" width="800" alt="984 frames - Statistics">
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Notebook II: Custom time frequency transform
+
+This notebook implements STFT-based transforms for enhanced fault detection in non-stationary signals. Key components include:
+
 - Comparative analysis against baseline methods to highlight improvements in early detection rates.
 
 These techniques are particularly effective for identifying subtle frequency modulations indicative of incipient faults.
@@ -62,11 +54,6 @@ Preliminary results indicate that aT-CWT achieves a higher accuracy in early fau
 
 Further validation on real-world industrial data is recommended.
 
-
-
-<video width="900" controls>
-  <source src="https://github.com/DrStef/Bearing-Fault-Early-Detection-with-Custom-DSP-Features/edit/main/bearing_defaut_detection.mp4" type="video/mp4">
-</video>
 
 
 
