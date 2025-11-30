@@ -82,7 +82,8 @@ The dataset consists of 20 480 samples per second. To obtain robust and physical
 
 **Why 3-second super-frames?**  
 
-- Provides excellent frequency resolution (≈ 0.33 Hz) for detecting low-frequency fault characteristic frequencies (237 Hz, 474 Hz, etc.)  
+- Provides excellent frequency resolution (≈ 0.33 Hz) for detecting low-frequency fault characteristic frequencies (237 Hz, 474 Hz, etc.)
+- Allows for stabilizing the magnitude and phase of FFTs compared to a frame-by-frame implementation.
 - Sufficient duration to capture several rotations of the bearing and multiple impacts  
 - Widely used in industrial condition-monitoring systems (easy edge deployment)  
 - Naturally compatible with human inspection and existing diagnostic rules
