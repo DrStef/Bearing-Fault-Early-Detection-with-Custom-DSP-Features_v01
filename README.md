@@ -8,6 +8,19 @@ Key objectives:
 - Compare traditional and adaptive transform-based approaches for improved sensitivity and accuracy.
 - Provide reproducible code for researchers and practitioners in mechanical engineering and machine learning.
 
+#### Scope of this Work
+
+The NASA IMS Bearing dataset is known for strong **cross-bearing vibration transmission**: a fault on one bearing (e.g. Bearing 1) is clearly visible in the accelerometers mounted on the other three bearings. This phenomenon is well documented in the literature (e.g. Soualhi et al., 2014; Mahamad et al., 2010) and was also observed in our own experiments.
+
+**Despite this interesting property, the present study deliberately focuses exclusively on Bearing 1 (channel 1)** for the following reasons:
+- Bearing 1 exhibits the most complete and well-characterized run-to-failure trajectory in the dataset (test 2).
+- It is the most commonly used as the reference case in the prognostics community, allowing direct comparison with hundreds of published works.
+- Concentrating on a single sensor simplifies the analysis and highlights the performance of the proposed method without relying on multi-sensor fusion.
+
+Future work may extend the approach to multi-channel or cross-bearing detection.
+
+
+
 ## Methods
 
 The analysis is divided into two notebooks, each focusing on distinct DSP techniques.
