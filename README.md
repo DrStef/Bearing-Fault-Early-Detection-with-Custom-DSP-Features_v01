@@ -83,9 +83,62 @@ Results are summarized in the table below and show that even simple statistical 
 |         Isolation Forest   |          536         |    
 
 
+### Kalman-Based Predictive Methods
 
+Two Kalman approaches were evaluated:
+
+1. **Simple 1D Kalman** on the standard deviation (STD) of 3-second super-frames  
+2. **Advanced harmonic Kalman** using a physical model of the healthy vibration
+
+#### Physical Reference Model (harmonic Kalman)
+
+The healthy bearing signal is modelled as a sum of sinusoids with measured amplitude and phase:
+
+$$
+\displaystyle
+s_{\text{model}}(t) = 
+\sum_{k} A_k \sin(2\pi f_k t + \varphi_k)
+$$
+
+where the main components being:
+- carrier at **4503 Hz**  
+- harmonics at **237 Hz**, **474 Hz**, **1009 Hz**, **1923 Hz**  
+- corresponding sidebands (±237, ±474, ±1009 Hz)
+
+The residual is computed **only in the critical band 3000–7000 Hz** where fault sidebands appear first.
+
+#### Results
+
+| Method                        | First persistent alarm | Early warning sign |
+|-------------------------------|------------------------|--------------------|
+| Simple Kalman on STD          | super-frame ~610       | —                  |
+| **Harmonic Kalman (this work)** | **super-frame 525**    | **clear bump at ~460–470** |
+
+
+The harmonic Kalman filter not only confirms the defect at super-frame 525 (459 s before failure) but also exhibits a **distinct precursor bump at super-frames 460–470**, corresponding to the very first sideband growth — perfectly aligned with physical expectations from vibration theory.
 
 <br><br>
+
+
+| <img src="results/kalman_reference_model_with_harmonics.png" width="600" alt="FFT frame">  | <img src="results/advanced_kalman_score_restrict_3k_7k.png" width="600" alt="FFT frame">  |               
+|:-----------------------------------------------------------:|:-----------------------------------------------:|
+|    <i> Harmonic Kalman model (FFT) </i>                    |   <i> Kalman score on residual - 3kHz-7kHz </i>  |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### Notebook II: Custom time frequency transform
