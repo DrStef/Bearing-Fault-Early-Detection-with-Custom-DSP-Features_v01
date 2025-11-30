@@ -40,9 +40,34 @@ Mean, standard deviation, skewness and kurtosis computed on each 3-second super-
 |    <i> FFT of frame 50  </i>                    |   <i> FFT of frame 540  </i>  |
 
 
+### Benchmark of Classical Time-Series Anomaly Detection Methods  
+
+**Input feature: Standard Deviation (STD) of 3-second overlapping super-frames**
+
+The dataset consists of 20 480 samples per second. To obtain robust and physically meaningful features while maintaining real-time capability, the signal is segmented into **overlapping 3-second super-frames** (61 440 samples each), yielding **982 windows** with a 1-second step.
+
+**Why 3-second super-frames?**  
+
+- Provides excellent frequency resolution (≈ 0.33 Hz) for detecting low-frequency fault characteristic frequencies (237 Hz, 474 Hz, etc.)  
+- Sufficient duration to capture several rotations of the bearing and multiple impacts  
+- Widely used in industrial condition-monitoring systems (easy edge deployment)  
+- Naturally compatible with human inspection and existing diagnostic rules
+
+Four well-established time-series anomaly detection techniques are evaluated using only this single feature (STD):
+
+- **LSTM Autoencoder / Predictor**  
+- **Facebook Prophet** (additive model with automatic changepoint detection)  
+- **ARIMA** with residual-based scoring  
+- **Isolation Forest** on lagged features  
+
+All models are trained exclusively on healthy data (super-frames 50→300) and tested on the full run. No future information is used — all methods are fully causal and deployable online.
+
+Results are summarized in the table below and show that even simple statistical approaches achieve competitive early detection performance when applied to carefully engineered time windows.
 
 
-
+| <img src="results/FFT_raw_frame50.png" width="500" alt="FFT frame">  | <img src="results/FFT_raw_frame540.png" width="500" alt="FFT frame">  |               
+|:-----------------------------------------------------------:|:-----------------------------------------------:|
+|    <i> FFT of frame 50  </i>                    |   <i> FFT of frame 540  </i>  |
 
 
 
