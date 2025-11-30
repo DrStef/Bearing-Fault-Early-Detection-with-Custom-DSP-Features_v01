@@ -150,7 +150,7 @@ The harmonic Kalman filter not only confirms the defect at super-frame 525 (459 
 <br><br>
 
 
-| <img src="results/kalman_reference_model_with_harmonics.png" width="600" alt="FFT frame">  | <img src="results/advanced_kalman_score_restrict_3k_7k.png" width="600" alt="FFT frame">  |               
+| <img src="results/kalman_reference_model_with_harmonics.png" width="600" alt="FFT frame">  | <img src="results/advanced_kalman_score_restrict_3k_7kEM.png" width="600" alt="FFT frame">  |               
 |:-----------------------------------------------------------:|:-----------------------------------------------:|
 |    <i> Harmonic Kalman model (FFT) <br> Magnitude only (the model is complex) </i>                    |   <i> Kalman score on residual - 3kHz-7kHz <br> Defect detected at super-frame 525 </i>  |
 
