@@ -21,23 +21,15 @@ Future work may extend the approach to multi-channel or cross-bearing detection.
 
 [![Watch the video](https://img.youtube.com/vi/EBdf1oiCXeE/0.jpg)](https://www.youtube.com/watch?v=EBdf1oiCXeE)
 
+[![Watch the video](https://img.youtube.com/vi/EBdf1oiCXeE/0.jpg)](https://www.youtube.com/embed/EBdf1oiCXeE?si=3Ygn0G6zLUFsa1WY)
+
+
+
 Early fault signatures appear **well before** frames 530–540 – visible in both magnitude and phase.
 
 (Video autoplays with sound and loops · two square panels side-by-side → 896×504 px)
 
-# Early Fault Detection – NASA Bearing 1 (Dataset 2)  
-### bT-CWT magnitude + phase · 984 frames → 1 min 39 s
 
-<div align="center">
-[![Watch the video](https://img.youtube.com/vi/EBdf1oiCXeE/maxresdefault.jpg)](https://www.youtube.com/watch?v=EBdf1oiCXeE)
-</div>
-
-<iframe width="896" height="300" 
-  
-  [![Watch the video](https://img.youtube.com/vi/EBdf1oiCXeE/0.jpg)](https://www.youtube.com/watch?v=EBdf1oiCXeE)
-
-  /iframe>
-  
 
 Early fault signatures are clearly visible **well before** frames 530–540.
 
