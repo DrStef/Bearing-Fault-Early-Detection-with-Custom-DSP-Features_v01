@@ -35,9 +35,12 @@ Mean, standard deviation, skewness and kurtosis computed on each 3-second super-
 ### FFT 
 
 
+
+
 | <img src="results/FFT_raw_frame50.png" width="500" alt="FFT frame">  | <img src="results/FFT_raw_frame540.png" width="500" alt="FFT frame">  |               
 |:-----------------------------------------------------------:|:-----------------------------------------------:|
 |    <i> FFT of frame 50  </i>                    |   <i> FFT of frame 540  </i>  |
+
 
 
 ### Benchmark of Classical Time-Series Anomaly Detection Methods  
@@ -65,9 +68,19 @@ All models are trained exclusively on healthy data (super-frames 50→300) and t
 Results are summarized in the table below and show that even simple statistical approaches achieve competitive early detection performance when applied to carefully engineered time windows.
 
 
-| <img src="results/FFT_raw_frame50.png" width="500" alt="FFT frame">  | <img src="results/FFT_raw_frame540.png" width="500" alt="FFT frame">  |               
+| <img src="results/LSTM_on_STD_EM.png" width="500" alt="FFT frame">  | <img src="results/Arima_anomaly_detection_EMb.png" width="500" alt="FFT frame">  |               
 |:-----------------------------------------------------------:|:-----------------------------------------------:|
-|    <i> FFT of frame 50  </i>                    |   <i> FFT of frame 540  </i>  |
+|    <i> LSTM Predictor on STD </i>                    |   <i> ARIMA Anomaly Detection – STD </i>  |
+
+
+|           Model          |         Frame            |    
+|-----------------------|-------------------------|
+|           LSTM          |            530           |    
+|           ARIMA         |              534       |    
+|          PROPHET        |            615         |   
+|         Isolation Forest   |          536         |    
+
+
 
 
 
