@@ -32,6 +32,12 @@ Mean, standard deviation, skewness and kurtosis computed on each 3-second super-
 |    <i>Temporal Evolution of Statistical Features Across the 984 Super-Frames </i>                    |
 
 
+### FFT 
+
+
+| <img src="results/FFT_raw_frame50.png" width="500" alt="FFT frame">  | <img src="results/FFT_raw_frame540.png" width="500" alt="FFT frame">  |               
+|:-----------------------------------------------------------:|:-----------------------------------------------:|
+|    <i> FFT of frame 50  </i>                    |   <i> FFT of frame 540  </i>  |
 
 
 
