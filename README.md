@@ -101,11 +101,11 @@ Results are summarized in the table below and show that even simple statistical 
 
 | <img src="results/LSTM_on_STD_EM.png" width="600" alt="FFT frame">  | <img src="results/Arima_anomaly_detection_EMb.png" width="600" alt="FFT frame">  |               
 |:-----------------------------------------------------------:|:-----------------------------------------------:|
-|    <i> LSTM Predictor on STD <br> Defect detected at superframe 530  </i>                    |   <i> ARIMA Anomaly Detection – STD <br> Defect detected at frame 534</i>  |
+|    <i> LSTM Predictor on STD <br> Defect detected at superframe 530  </i>                    |   <i> ARIMA Anomaly Detection – STD <br> Defect detected at superframe 534</i>  |
 
 <br>
 
-|           Model          |         Frame            |    
+|           Model          |        superframe  (3*fs) |    
 |-----------------------|-------------------------|
 |           LSTM          |            530           |    
 |           ARIMA         |              534       |    
