@@ -54,7 +54,8 @@ In healthy conditions (e.g. super-frame 50), the spectrum is dominated by the 45
 
 From super-frame ~540 onward, multiple sidebands in the 4300–4800 Hz region suddenly emerge with amplitudes 10–20× higher than in the healthy state — clearly visible even to the naked eye. These newly appearing peaks are the earliest spectral signature of the developing inner-race fault and perfectly align with the physical model described above.
 <br>
-### Why is the 1009 Hz peak so dominant?
+
+**Why is the 1009 Hz peak so dominant?**
 
 The strongest harmonic in the healthy spectrum is located at **~1009 Hz**, with an amplitude far exceeding all other components.
 
