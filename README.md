@@ -67,9 +67,9 @@ It acts as an **extremely stable and powerful "reference tone"** throughout the 
 
 The actual bearing fault frequencies (BPFI, BPFO, etc.) only become detectable through the **sidebands that modulate this resonance and the 4503 Hz carrier** — exactly what our harmonic Kalman filter exploits.
 
-| <img src="results/FFT_raw_frame50.png" width="600" alt="FFT frame">  | <img src="results/FFT_raw_frame540.png" width="600" alt="FFT frame">  |               
+| <img src="results/FFT_raw_frame50.png" width="700" alt="FFT frame">  | <img src="results/FFT_raw_frame540.png" width="700" alt="FFT frame">  |               
 |:-----------------------------------------------------------:|:-----------------------------------------------:|
-|    <i> FFT of frame 50  </i>                    |   <i> FFT of frame 540  </i>  |
+|    <i> FFT of frame 50  <br> Bearings 1,2,3,4  </i>                    |   <i> FFT of frame 540 <br> Bearings 1,2,3,4  </i>  |
 
 
 <br><br>
