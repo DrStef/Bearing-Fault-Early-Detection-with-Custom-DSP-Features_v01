@@ -260,7 +260,17 @@ These values confirm your peaks: 986 Hz ~4x BSF (564 Hz) or 2x BPFI sideband; 50
 ## Extensions to Drilling Telemetry
 The methods scale to oil & gas telemetry: Custom CWT/synchrosqueezing on multi-sensor vibrations (torque/pressure fusion) for real-time fault prediction (e.g., harmonic anomalies indicating bit fatigue 30s ahead). Aligns with streaming ML pipelines (Kafka/Flink) for 10k ft deep operations.
 
-## License
+## License & Data Source
+
+The vibration dataset used in this repository is the well-known **NASA IMS Bearing Data Set**  
+(Prognostic Data Repository, NASA Ames Research Center).
+
+As a work of the United States Government, this dataset is in the **public domain** within the United States.
+
+> **U.S. Government Works** – No copyright claimed in the United States.  
+> More information: https://www.usa.gov/government-copyright
+
+The code and analysis presented in this repository are released under the **MIT License** (see `LICENSE` file).
 MIT License – feel free to fork and collaborate!
 
 *Contact: DrStef on GitHub | Open to DSP/ML discussions for industrial prognostics.*
