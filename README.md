@@ -19,24 +19,28 @@ The NASA IMS Bearing dataset is known for strong **cross-bearing vibration trans
 
 Future work may extend the approach to multi-channel or cross-bearing detection.
 
-### Early Fault Detection – NASA Bearing 1 (Dataset 2)  
-#### bT-CWT magnitude + phase (984 frames → 1 min 39 s)
+# Early Fault Detection – NASA Bearing 1 (Dataset 2)  
+### bT-CWT magnitude + phase – 984 frames condensed to 1 min 39 s
 
 <div align="center">
 
-[![NASA Bearing 1 failure – bT-CWT visualization](https://img.youtube.com/vi/EBdf1oiCXeE/maxresdefault.jpg)](https://www.youtube.com/watch?v=EBdf1oiCXeE)
-
 <iframe width="896" height="504" 
         src="https://www.youtube.com/embed/EBdf1oiCXeE?autoplay=1&mute=0&loop=1&playlist=EBdf1oiCXeE&rel=0" 
-        title="NASA Bearing 1 – bT-CWT visualization" 
+        title="NASA Bearing 1 failure – bT-CWT magnitude and phase visualization"
         frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
         allowfullscreen>
 </iframe>
 
 </div>
 
-Early degradation signatures appear **well before** frames 530–540.
+Early fault signatures appear **well before** frames 530–540 – visible in both magnitude and phase.
+
+(Video autoplays with sound and loops · two square panels side-by-side → 896×504 px)
+
+
+
 ## Methods
 
 The analysis is divided into two notebooks, each focusing on distinct DSP techniques.
