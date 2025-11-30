@@ -32,10 +32,26 @@ Mean, standard deviation, skewness and kurtosis computed on each 3-second super-
 |    <i>Temporal Evolution of Statistical Features Across the 984 Super-Frames </i>                    |
 
 <br><br>
-### FFT 
 
+### Frequency-Domain Analysis (FFT)
+
+Short-Time Fourier Transforms (N = 512, Hann window) were computed on each 3-second super-frame.
+
+In healthy conditions (e.g. super-frame 50), the spectrum is dominated by the 4503 Hz carrier and a few low-frequency harmonics. The fault-related sidebands around the carrier remain buried in the noise floor.
+
+From super-frame ~540 onward, multiple sidebands in the 4300–4800 Hz region suddenly emerge with amplitudes 10–20× higher than in the healthy state — clearly visible even to the naked eye. These newly appearing peaks are the earliest spectral signature of the developing inner-race fault and perfectly align with the physical model described above.
 <br>
+### Why is the 1009 Hz peak so dominant?
 
+The strongest harmonic in the healthy spectrum is located at **~1009 Hz**, with an amplitude far exceeding all other components.
+
+This frequency corresponds to **≈ 4.26 × shaft rotation frequency** (237 Hz × 4.26 ≈ 1009 Hz).
+
+In the IMS Bearing 1 dataset, this peak is systematically present and is very likely the **natural resonance frequency of the accelerometer-housing system** (or a structural mode of the test rig) strongly excited by the fourth-order rotational harmonics.
+
+It acts as an **extremely stable and powerful "reference tone"** throughout the entire test — which is why it appears so prominent even in perfectly healthy conditions and remains visible until the very end.
+
+The actual bearing fault frequencies (BPFI, BPFO, etc.) only become detectable through the **sidebands that modulate this resonance and the 4503 Hz carrier** — exactly what our harmonic Kalman filter exploits.
 
 | <img src="results/FFT_raw_frame50.png" width="600" alt="FFT frame">  | <img src="results/FFT_raw_frame540.png" width="600" alt="FFT frame">  |               
 |:-----------------------------------------------------------:|:-----------------------------------------------:|
