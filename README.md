@@ -38,7 +38,7 @@ The notebook demonstrates how these methods can detect early fault signatures wi
 
 ### Statistics
 
-Mean, standard deviation, skewness and kurtosis computed on each 3-second super-frame (982 overlapping windows).
+Mean, standard deviation, skewness and kurtosis computed on each frame (984).
 
 |            <img src="results/Time_Series_Statistics.png" width="600" alt="984 frames - Statistics">      |
 |:---------------------------------------------------------------------------------------------------------:|
