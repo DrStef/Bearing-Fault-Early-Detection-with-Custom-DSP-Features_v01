@@ -154,11 +154,17 @@ All models are trained exclusively on healthy data (super-frames 50→300) and t
 
 Results are summarized in the table below and show that even simple statistical approaches achieve competitive early detection performance when applied to carefully engineered time windows.
 
+<div align="center">
+  
+| <img src="results/LSTM_on_STD_EM.png" width="700" alt="FFT frame">  | 
+|-----------------------------------------------------------|
+|  <p align="center">  <i> LSTM Predictor on STD -  Defect detected at <b>superframe 530</b>  </i> </p> |
+|<img src="results/Arima_anomaly_detection_EMb.png" width="700" alt="FFT frame">  |               
+| <p align="center"><i> ARIMA Anomaly Detection – STD  -  Defect detected at <b>superframe 534</b> </i> </p> |
 
-| <img src="results/LSTM_on_STD_EM.png" width="700" alt="FFT frame">  | <img src="results/Arima_anomaly_detection_EMb.png" width="700" alt="FFT frame">  |               
-|:-----------------------------------------------------------:|:-----------------------------------------------:|
-|    <i> LSTM Predictor on STD <br> Defect detected at superframe 530  </i>                    |   <i> ARIMA Anomaly Detection – STD <br> Defect detected at superframe 534</i>  |
+</div>
 
+<br>
 <br>
 
 |           Model          |        superframe  (3*fs) |    
