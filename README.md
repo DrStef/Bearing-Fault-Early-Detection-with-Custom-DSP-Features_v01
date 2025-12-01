@@ -52,7 +52,7 @@ The analysis is divided into two notebooks, each focusing on distinct DSP techni
 
 [![Watch the video](https://img.youtube.com/vi/EBdf1oiCXeE/0.jpg)](https://www.youtube.com/embed/EBdf1oiCXeE?si=3Ygn0G6zLUFsa1WY)
 
-<p><em>Early fault signatures are clearly visible in both magnitude and phase <strong>well before</strong> frames 530–540.</em></p>
+<p><em>Video: Early fault signatures are clearly visible in both magnitude and phase <strong>well before</strong> frames 530–540.</em></p>
 
 </div>
 
