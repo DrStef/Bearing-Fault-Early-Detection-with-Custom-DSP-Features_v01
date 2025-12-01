@@ -51,13 +51,12 @@ These techniques are particularly effective for identifying subtle frequency mod
 <br><br>
   
 <div align="center">
-
+  
 [![Watch the video](https://img.youtube.com/vi/EBdf1oiCXeE/0.jpg)](https://www.youtube.com/embed/EBdf1oiCXeE?si=3Ygn0G6zLUFsa1WY)
 
 <p><em>Video: Early fault signatures are clearly visible in both magnitude and phase <strong>well before</strong> frames 530–540.</em></p>
 
 </div>
-
 <br><br>
 
 #### PhaseMag-AE — Our specialized autoencoder for joint magnitude/phase superframes
