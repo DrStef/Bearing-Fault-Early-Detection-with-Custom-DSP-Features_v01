@@ -8,26 +8,55 @@ Key objectives:
 - Compare traditional and adaptive transform-based approaches for improved sensitivity and accuracy.
 - Provide reproducible code for researchers and practitioners in mechanical engineering and machine learning.
 
-#### Scope of this Work
+## Dataset Overview
 
-The NASA IMS Bearing dataset is known for strong **cross-bearing vibration transmission**: a fault on one bearing (e.g. Bearing 1) is clearly visible in the accelerometers mounted on the other three bearings. This phenomenon is well documented in the literature (e.g. Soualhi et al., 2014; Mahamad et al., 2010) and was also observed in our own experiments.
+The NASA Prognostics Data Repository provides run-to-failure vibration data from Rexnord ZA-2115 double-row bearings under constant conditions (2000 RPM, 6000 lbs radial load, force-lubricated). The NASA Bearing Dataset is a benchmark collection for predictive maintenance and anomaly detection in rotating machinery. It consists of run-to-failure experiments on ball bearings under constant load and rotational speeds (2000-4000 RPM).  
 
-**Despite this interesting property, the present study deliberately focuses exclusively on Bearing 1 (channel 1)** for the following reasons:
+https://www.kaggle.com/datasets/vinayak123tyagi/bearing-dataset/data
+
+- **Set 2 Details** (Selected for Simplicity):
+  - Recording Duration: February 12, 2004 10:32:39 to February 19, 2004 06:22:39.
+  - No. of Files: 984 (1-second excerpts every 10 minutes, ASCII format).
+  - No. of Channels: 4 (one accelerometer per bearing: Bearing 1 Ch1, Bearing 2 Ch2, Bearing 3 Ch3, Bearing 4 Ch4).
+  - Sampling rate: 20480 Hz (high-resolution vibration signals).
+  - Duration: Up to several hours per run, with progressive degradation from normal to failure.
+  - Signals: Accelerometer data in X, Y, Z axes (e.g., `X001_DE_time` for drive-end vibrations).
+  - Fault: Outer race failure in **Bearing 1** (progressive degradation over ~16 minutes total runtime).
+  - Structure: Files named by timestamp (e.g., "2004.02.12.10.32.39"); early files healthy, later show increasing impulses.
+
+Data is loaded as a NumPy array [984 files, 4 channels, 20,480 samples] for analysis. 
+This dataset is ideal for testing denoising (Kalman) and time-frequency analysis (btSTFT) to detect early harmonic faults.
+
+### Scope of this Work
+
+**The present study deliberately focuses exclusively on Bearing 1 (channel 1)** for the following reasons:
 - Bearing 1 exhibits the most complete and well-characterized run-to-failure trajectory in the dataset (test 2).
 - It is the most commonly used as the reference case in the prognostics community, allowing direct comparison with hundreds of published works.
 - Concentrating on a single sensor simplifies the analysis and highlights the performance of the proposed method without relying on multi-sensor fusion.
 
 Future work may extend the approach to multi-channel or cross-bearing detection.
 
-
-[![Watch the video](https://img.youtube.com/vi/EBdf1oiCXeE/0.jpg)](https://www.youtube.com/embed/EBdf1oiCXeE?si=3Ygn0G6zLUFsa1WY)
-
-Early fault signatures appear before frames 530–540 – visible in both magnitude and phase.
-
-
 ## Methods
 
 The analysis is divided into two notebooks, each focusing on distinct DSP techniques.
+
+### Notebook II: Custom Time-Frequency Analysis for Early Fault Detection
+
+- We introduce a novel time-frequency representation specifically designed to reveal incipient bearing faults at the earliest possible stage.  
+- We implement an interactive monitoring interface that combines real-time visualization with audio playback, enabling simultaneous magnitude/phase display, and clear highlighting of emerging fault patterns (see the reference video).  
+- We train a lightweight convolutional autoencoder exclusively on healthy operating conditions, then apply it to frames 300–900 of the run-to-failure sequence, achieving fully unsupervised detection of the very first signs of bearing degradation.
+
+<br><br>
+  
+<div align="center">
+  
+[![Watch the video](https://img.youtube.com/vi/EBdf1oiCXeE/0.jpg)](https://www.youtube.com/embed/EBdf1oiCXeE?si=3Ygn0G6zLUFsa1WY)
+
+<p><em>Early fault signatures are clearly visible in both magnitude and phase <strong>well before</strong> frames 530–540.</em></p>
+
+</div>
+
+<br><br>
 
 ### Notebook I: Time Series Methods
 
@@ -228,7 +257,10 @@ The NASA Prognostics Data Repository provides run-to-failure vibration data from
   - Fault: Outer race failure in Bearing 1 (progressive degradation over ~16 minutes total runtime).
   - Structure: Files named by timestamp (e.g., "2004.02.12.10.32.39"); early files healthy, later show increasing impulses.
 
-Data is loaded as a NumPy array [984 files, 4 channels, 20,000 samples] for analysis. Theoretical fault frequencies (at 2000 RPM):
+Data is loaded as a NumPy array [984 files, 4 channels, 20,000 samples] for analysis. 
+
+
+Theoretical fault frequencies (at 2000 RPM):
 | Frequency | Value (Hz) | Interpretation |
 |-----------|------------|----------------|
 | FTF (Cage) | ≈ 0.40 | Cage rotation (multiples ~50-60 Hz noise). |
