@@ -59,6 +59,24 @@ These techniques are particularly effective for identifying subtle frequency mod
 </div>
 
 
+#### PhaseMag-AE — Our specialized autoencoder for joint magnitude/phase superframes
+
+- Input: 256×256×2 (magnitude + phase channels from the custom transform superframes)  
+- Fully convolutional encoder–decoder (32 → 64 → 128 latent filters)  
+- Linear reconstruction head (no clipping) to preserve full dynamic range of both magnitude and phase  
+- Trained exclusively on healthy frames → reconstruction error spikes at the very first fault impulses  
+
+PhaseMag-AE detects degradation automatically and unsupervised, typically 150–200 frames (~minutes to hours) before classical indicators.
+
+
+
+
+
+
+
+
+
+
 ### Notebook I: Time Series Methods
 
 This notebook explores classical time series analysis methods for feature extraction from bearing vibration signals. It includes:
