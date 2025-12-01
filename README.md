@@ -22,7 +22,7 @@ PCB 353B33 High Sensitivity Quartz ICP accelerometers were installed on the bear
 
 <div align="center">
   
-|         |          |
+|      <img src="documents/ISM_setup_photo.png" width="300" alt="984 set-up photo">      |       <img src="documents/ISM_setup_drawing.png" width="300" alt="984 set-up drawing">    |
 |---------|----------|
 |         |          |
 
