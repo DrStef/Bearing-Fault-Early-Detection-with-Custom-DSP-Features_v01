@@ -88,10 +88,13 @@ The notebook demonstrates how these methods can detect early fault signatures wi
 
 Mean, standard deviation, skewness and kurtosis computed on each frame (984).
 
+<div align="center">
+
 |            <img src="results/Time_Series_Statistics.png" width="600" alt="984 frames - Statistics">      |
 |:---------------------------------------------------------------------------------------------------------:|
 |    <i>Temporal Evolution of Statistical Features Across the 984 Super-Frames </i>                    |
 
+</div>
 <br><br>
 
 ### Frequency-Domain Analysis (FFT)
@@ -115,12 +118,17 @@ It acts as an **extremely stable and powerful "reference tone"** throughout the 
 
 The actual bearing fault frequencies (BPFI, BPFO, etc.) only become detectable through the **sidebands that modulate this resonance and the 4503 Hz carrier** — exactly what our harmonic Kalman filter exploits.
 
-| <img src="results/FFT_raw_frame50.png" width="700" alt="FFT frame">  | <img src="results/FFT_raw_frame540.png" width="700" alt="FFT frame">  |               
-|:-----------------------------------------------------------:|:-----------------------------------------------:|
-|    <i> FFT of frame 50  <br> Bearings 1,2,3,4  </i>                    |   <i> FFT of frame 540 <br> Bearings 1,2,3,4  </i>  |
+<div align="center">
 
+| <img src="results/FFT_raw_frame50.png" width="700" alt="FFT frame">  |  
+|-----------------------------------------------------------|
+|   <p align="center"><i> FFT of <b>frame 50</b> (Bearings 1,2,3,4) </i></p>                   |   
+| <img src="results/FFT_raw_frame540.png" width="700" alt="FFT frame">  |  
+| <p align="center"><i> FFT of <b>frame 540</b> (Bearings 1,2,3,4)  </i></p> |
 
+</div>
 <br><br>
+
 
 ### Benchmark of Classical Time-Series Anomaly Detection Methods  
 
