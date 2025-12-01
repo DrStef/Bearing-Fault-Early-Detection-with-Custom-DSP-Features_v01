@@ -166,7 +166,8 @@ Results are summarized in the table below and show that even simple statistical 
 
 <br>
 <br>
-
+<div align="center">
+  
 |           Model          |        superframe  (3*fs) |    
 |-----------------------|-------------------------|
 |           LSTM          |            530           |    
@@ -174,6 +175,7 @@ Results are summarized in the table below and show that even simple statistical 
 |          PROPHET        |            615         |   
 |         Isolation Forest   |          536         |    
 
+</div>
 
 ### Kalman-Based Predictive Methods
 
@@ -201,22 +203,28 @@ The residual is computed **only in the critical band 3000–7000 Hz** where faul
 
 #### Results
 
+<div align="center">
+
 | Method                        | First persistent alarm | Early warning sign |
 |-------------------------------|------------------------|--------------------|
 | Simple Kalman on STD          | super-frame ~610       | —                  |
 | **Harmonic Kalman (this work)** | **super-frame 525**    | **clear bump at ~460–470** |
 
+</div>
 
 The harmonic Kalman filter not only confirms the defect at super-frame 525 (459 s before failure) but also exhibits a **distinct precursor bump at super-frames 460–470**, corresponding to the very first sideband growth — perfectly aligned with physical expectations from vibration theory.
 
 <br><br>
 
+<div align="center">
+  
+| <img src="results/kalman_reference_model_with_harmonics.png" width="700" alt="FFT frame">  | 
+|-----------------------------------------------------------|
+|   <p align="center">  <i> Harmonic Kalman model (FFT) -- Magnitude only (the model is complex) </i>  </p>   |
+|<img src="results/advanced_kalman_score_restrict_3k_7k_EM.png" width="700" alt="FFT frame">  |               
+|   <p align="center"> <i> Kalman score on residual - 3kHz-7kHz -- Defect detected at super-frame 525 </i> </p> |
 
-| <img src="results/kalman_reference_model_with_harmonics.png" width="700" alt="FFT frame">  | <img src="results/advanced_kalman_score_restrict_3k_7k_EM.png" width="700" alt="FFT frame">  |               
-|:-----------------------------------------------------------:|:-----------------------------------------------:|
-|    <i> Harmonic Kalman model (FFT) <br> Magnitude only (the model is complex) </i>                    |   <i> Kalman score on residual - 3kHz-7kHz <br> Defect detected at super-frame 525 </i>  |
-
-
+</div>
 
 
 <br><br>
