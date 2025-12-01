@@ -46,6 +46,8 @@ The analysis is divided into two notebooks, each focusing on distinct DSP techni
 - We implement an interactive monitoring interface that combines real-time visualization with audio playback, enabling simultaneous magnitude/phase display, and clear highlighting of emerging fault patterns (see the reference video).  
 - We train a lightweight convolutional autoencoder exclusively on healthy operating conditions, then apply it to frames 300–900 of the run-to-failure sequence, achieving fully unsupervised detection of the very first signs of bearing degradation.
 
+These techniques are particularly effective for identifying subtle frequency modulations indicative of incipient faults.
+
 <br><br>
   
 <div align="center">
@@ -55,9 +57,6 @@ The analysis is divided into two notebooks, each focusing on distinct DSP techni
 <p><em>Video: Early fault signatures are clearly visible in both magnitude and phase <strong>well before</strong> frames 530–540.</em></p>
 
 </div>
-
-
-<br><br>
 
 
 ### Notebook I: Time Series Methods
@@ -206,28 +205,6 @@ The harmonic Kalman filter not only confirms the defect at super-frame 525 (459 
 
 
 
-
-
-
-
-### Notebook II: Custom time frequency transform
-
-This notebook implements STFT-based transforms for enhanced fault detection in non-stationary signals. Key components include:
-
-- Comparative analysis against baseline methods to highlight improvements in early detection rates.
-
-These techniques are particularly effective for identifying subtle frequency modulations indicative of incipient faults.
-
-## Results
-
-Preliminary results indicate that aT-CWT achieves a higher accuracy in early fault detection compared to standard time series methods, with a false positive rate below 5% on test datasets. Detailed metrics, including precision, recall, and ROC curves, are visualized in the notebooks. 
-
-Further validation on real-world industrial data is recommended.
-
-
-
-
-## Notebooks
 
 
 
