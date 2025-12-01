@@ -58,6 +58,7 @@ These techniques are particularly effective for identifying subtle frequency mod
 
 </div>
 
+<br><br>
 
 #### PhaseMag-AE — Our specialized autoencoder for joint magnitude/phase superframes
 
@@ -69,13 +70,8 @@ These techniques are particularly effective for identifying subtle frequency mod
 PhaseMag-AE detects degradation automatically and unsupervised, typically 150–200 frames (~minutes to hours) before classical indicators.
 
 
-
-
-
-
-
-
-
+<br><br>
+<br><br>
 
 ### Notebook I: Time Series Methods
 
