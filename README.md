@@ -19,27 +19,11 @@ The NASA IMS Bearing dataset is known for strong **cross-bearing vibration trans
 
 Future work may extend the approach to multi-channel or cross-bearing detection.
 
-TEST VIDEOS  (under construction). 
-
-[![Watch the video](https://raw.githubusercontent.com/DrStef/Bearing-Fault-Early-Detection-with-Custom-DSP-Features_v01/main/bearing_videos/thumbnail.png)](https://raw.githubusercontent.com/DrStef/Bearing-Fault-Early-Detection-with-Custom-DSP-Features_v01/main/bearing_videos/EM_bearing1_f3_surframes_v04_lowdef.mp4)
-
-
-
-[![Watch the video](https://img.youtube.com/vi/EBdf1oiCXeE/0.jpg)](https://www.youtube.com/watch?v=EBdf1oiCXeE)
 
 [![Watch the video](https://img.youtube.com/vi/EBdf1oiCXeE/0.jpg)](https://www.youtube.com/embed/EBdf1oiCXeE?si=3Ygn0G6zLUFsa1WY)
 
+Early fault signatures appear before frames 530–540 – visible in both magnitude and phase.
 
-
-Early fault signatures appear **well before** frames 530–540 – visible in both magnitude and phase.
-
-(Video autoplays with sound and loops · two square panels side-by-side → 896×504 px)
-
-
-
-Early fault signatures are clearly visible **well before** frames 530–540.
-
-(Video autoplays with sound and loops endlessly)
 
 ## Methods
 
