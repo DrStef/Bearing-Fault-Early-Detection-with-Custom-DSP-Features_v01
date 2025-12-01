@@ -10,15 +10,15 @@ Key objectives:
 
 ## Dataset Overview
 
-**Test Rig Setup**
+The NASA Prognostics Data Repository provides run-to-failure vibration data from Rexnord ZA-2115 double-row bearings under constant conditions (2000 RPM, 6000 lbs radial load, force-lubricated). The NASA Bearing Dataset is a benchmark collection for predictive maintenance and anomaly detection in rotating machinery. It consists of run-to-failure experiments on ball bearings under constant load and rotational speeds (2000-4000 RPM).  
+
+https://www.kaggle.com/datasets/vinayak123tyagi/bearing-dataset/data
+
+- **Test Rig Setup**
 
 From the pdf document: <i>Four bearings were installed on a shaft. The rotation speed was kept constant at 2000 RPM by an AC
 motor coupled to the shaft via rub belts. A radial load of 6000 lbs is applied onto the shaft and bearing by a spring mechanism. All bearings are force lubricated. Rexnord ZA-2115 double row bearings were installed on the shaft as shown in Figure 1. 
 PCB 353B33 High Sensitivity Quartz ICP accelerometers were installed on the bearing housing (two accelerometers for each bearing [x- and y-axes] for data set 1, one accelerometer for each bearing for data sets 2 and 3). Sensor placement is also shown in Figure 1. All failures occurred after exceeding designed life time of the bearing which is more than 100 million revolutions.</i>
-
-The NASA Prognostics Data Repository provides run-to-failure vibration data from Rexnord ZA-2115 double-row bearings under constant conditions (2000 RPM, 6000 lbs radial load, force-lubricated). The NASA Bearing Dataset is a benchmark collection for predictive maintenance and anomaly detection in rotating machinery. It consists of run-to-failure experiments on ball bearings under constant load and rotational speeds (2000-4000 RPM).  
-
-https://www.kaggle.com/datasets/vinayak123tyagi/bearing-dataset/data
 
 - **Set 2 Details** (Selected for Simplicity):
   - Recording Duration: February 12, 2004 10:32:39 to February 19, 2004 06:22:39.
