@@ -1,10 +1,31 @@
 <div align="center">
-<h2>Bearing Fault Early Detection with Custom DSP Features</h2>
+<h1>Bearing Fault Early Detection with Custom DSP Features</h1>
 </div>
+
+**Early detection of bearing degradation in NASA IMS Dataset using denoising, custom bTSTFT transforms, and CNN autoencoder.**
+
+### Notebooks
+
+[PHASE II - Part I: Time Series & Spectral Analysis (FFT) with Wiener Denoising](https://github.com/DrStef/Bearing-Fault-Early-Detection-with-Custom-DSP-Features_v01/blob/main/NASA_Bearing_Time_Series%26Spectral_Analysis_v00.ipynb) 
+
+Time series analysis, spectral insights (FFT), Wiener denoising, LSTM on STD/kurtosis.
+  
+[PHASE II - Part II: Early Fault Detection with Custom btstft Transform]() 
+
+Loading precomputed bTSTFT tensors, autoencoder training, MSE reconstruction, mse std scoring, and cusum for robust early detection.
+
+### Quick Summary
+Wiener denoising + custom bTSTFT enables very early fault detection (~57 surframes / ~285 frames ahead of traditional metrics). See Phase II for the core detection pipeline.
+
+<br><br><br>
+
+
+
+
 
 <div align="center">
 <h1>PHASE II - NASA Bearing Dataset 2 - Bearing 1 </h1>
-<h1> Part I: Time Series & Spectral Analysis (FFT) with Wiener Denoising</h1><
+<h1> Part I: Time Series & Spectral Analysis (FFT) with Wiener Denoising</h1>
 </div>
 
 ## Overview
