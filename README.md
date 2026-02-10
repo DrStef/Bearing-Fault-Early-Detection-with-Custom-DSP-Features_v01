@@ -185,7 +185,7 @@ CUSUM applied to the MSE sequence confirms a persistent deviation starting at ~4
 
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <div align="center">
 <h1>PHASE I - NASA Bearing Datasets</h1>
