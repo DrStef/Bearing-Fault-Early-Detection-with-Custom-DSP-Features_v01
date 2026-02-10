@@ -52,10 +52,10 @@ Wiener denoising flattens the healthy baseline and sharpens fault indicators:
 
 <div align="center">
 <div style="text-align: center;">
-<img src="pictures/Four_Moments_Vibration_Signals.png" alt="4 moments raw v. wiener" width="70%" style="border:1px solid #ccc; border-radius:8px; padding:5px;">
+<img src="pictures/Four_Moments_Vibration_Signals.png" alt="4 moments raw v. wiener" width="80%" style="border:1px solid #ccc; border-radius:8px; padding:5px;">
 </div>
 <div style="text-align: center;">
-<i>Figure 2: Evolution of mean, STD, skewness, and kurtosis – Raw (dashed) vs Wiener-denoised (solid). Denoising improves clarity, especially on kurtosis and STD.</i>
+<i>Figure 2: Evolution of mean, STD, skewness, and kurtosis – Raw (dashed) vs Wiener-denoised (solid). <br> Denoising improves clarity, especially on kurtosis and STD.</i>
 </div>
 </div>
 
@@ -143,7 +143,7 @@ CUSUM applied to the MSE sequence confirms a persistent deviation starting at ~4
 
 <div align="center">
 <div style="text-align: center;">
-<img src="pictures/cusum_test_mse.png" alt="Example bTSTFT matrix (magnitude + phase)" width="65%" style="border:1px solid #ccc; border-radius:8px; padding:5px;">
+<img src="pictures/cusum_test_mse.png" alt="Example bTSTFT matrix (magnitude + phase)" width="80%" style="border:1px solid #ccc; border-radius:8px; padding:5px;">
 </div>
 <div style="text-align: center;">
 <i>Figure 6: CUSUM on MSE per surframe, showing early and persistent alarm at ~460–470.</i>
