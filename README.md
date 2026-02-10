@@ -1,10 +1,11 @@
-# Bearing Fault Early Detection with Custom DSP Features
+<div align="center">
+<h2>Bearing Fault Early Detection with Custom DSP Features</h2>
+</div>
 
-
-<center>
-<h1>PHASE II - NASA Bearing Dataset</h1>
+<div align="center">
+<h1>PHASE II - NASA Bearing Dataset 2 - Bearing 1 </h1>
 <h1> Part I: Time Series & Spectral Analysis (FFT) with Wiener Denoising</h1><
-</center>
+</div>
 
 ## Overview
 
@@ -133,20 +134,20 @@ The reconstruction error (MSE per surframe) on the test portion (frames 300–80
 <img src="pictures/mse_reconstruction.png" alt="Example bTSTFT matrix (magnitude + phase)" width="80%" style="border:1px solid #ccc; border-radius:8px; padding:5px;">
 </div>
 <div style="text-align: center;">
-<i>Figure 5: MSE per surframe on train set and test set (300–800), <br> with P15/P85 healthy band (green) and early persistent deviation at ~460–470</i>
+<i>Figure 5: MSE per surframe on train set and test set (300–800), <br> with P15/P85 healthy band (green) and early persistent deviation at ~450–470</i>
 </div>
 </div>
 
 ### 3. CUSUM on MSE for Anomaly Detection
 
-CUSUM applied to the MSE sequence confirms a persistent deviation starting at ~460–470, providing a robust statistical alarm signal well before traditional metrics.
+CUSUM applied to the MSE sequence confirms a persistent deviation starting at ~450–470, providing a robust statistical alarm signal well before traditional metrics.
 
 <div align="center">
 <div style="text-align: center;">
 <img src="pictures/cusum_test_mse.png" alt="Example bTSTFT matrix (magnitude + phase)" width="80%" style="border:1px solid #ccc; border-radius:8px; padding:5px;">
 </div>
 <div style="text-align: center;">
-<i>Figure 6: CUSUM on MSE per surframe, showing early and persistent alarm at ~460–470.</i>
+<i>Figure 6: CUSUM on MSE per surframe, showing early and persistent alarm at ~450–470.</i>
 </div>
 </div>
 
@@ -163,10 +164,12 @@ CUSUM applied to the MSE sequence confirms a persistent deviation starting at ~4
 
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-
-# PHASE I:  Preliminary Activities and datasets
+<div align="center">
+<h1>PHASE I - NASA Bearing Datasets</h1>
+<h1>Preliminary Activities</h1>
+</div>
 
 ## Overview
 This repository presents a comprehensive approach to early detection of bearing faults using custom digital signal processing (DSP) features derived from vibration data. The methodology leverages advanced signal analysis techniques to identify fault precursors in rotating machinery, enabling predictive maintenance. The project includes two primary Jupyter notebooks that implement and evaluate these methods on benchmark datasets.
