@@ -172,20 +172,28 @@ CUSUM applied to the MSE sequence confirms a persistent deviation starting at ~4
 </div>
 </div>
 
+## Conclusions – Part II
+
+The custom bTSTFT transform (magnitude + phase) combined with a CNN autoencoder on Wiener-denoised signals delivers **very early and persistent detection** of bearing degradation in the NASA IMS Set 2 dataset.
+
+Key highlights:
+- Reconstruction MSE shows a **clear and sustained deviation** starting around frame **460–470**, well before traditional metrics (RMS, kurtosis) indicate any significant change (~530–540).
+- CUSUM on MSE confirms this early persistent alarm at ~460–470, with a robust signal that remains elevated, avoiding transient false positives.
+- The method achieves a **precocity of approximately 60–80 frames** (~1–1.5 minutes) compared to classical time-series approaches, offering substantial lead time for predictive maintenance.
+
+This performance comes at the cost of **higher computational complexity**:
+- bTSTFT computation on 102,400-sample surframes (with 1024-point STFT + proprietary operation) takes ~1 second per surframe on an Intel i7-8665U laptop (~2.1 GHz base, 4 cores).
+- The full pipeline (surframes → bTSTFT → autoencoder inference) is heavier than 1D statistical methods or simple LSTM, but remains feasible in near-real-time (every 5–10 seconds) on modern edge hardware (e.g., NVIDIA Jetson or industrial PCs).
+
+Wiener denoising plays a critical role: it reduces the noise floor while preserving subtle high-frequency fault signatures (3000–7000 Hz band), enabling the bTSTFT + autoencoder to detect regime changes with high consistency and low risk of false alerts.
+
+In summary, this approach trades moderate compute cost for **significantly earlier, more reliable, and persistent detection** of bearing degradation – a promising step toward proactive monitoring in high-stakes industrial applications (e.g., drilling rigs, turbines).
+
+Future work will explore further optimization (downsampling, GPU acceleration, adaptive thresholds) and hybrid fusion with LSTM or other temporal models for even greater robustness.
 
 
 
-
-
-
-
-
-
-
-
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br>
 
 <div align="center">
 <h1>PHASE I - NASA Bearing Datasets</h1>
