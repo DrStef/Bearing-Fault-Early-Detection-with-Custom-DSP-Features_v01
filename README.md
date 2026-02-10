@@ -1,5 +1,109 @@
 # Bearing Fault Early Detection with Custom DSP Features
 
+<center>
+<h1>Phase II - Part I: Time Series & Spectral Analysis (FFT) with Wiener Denoising</h1>
+</center>
+
+## Overview
+
+This part focuses on foundational time series analysis of vibration data from the **NASA IMS Bearing Dataset** (run-to-failure experiments), with the goal of early fault detection for industrial predictive maintenance. We extract raw acceleration signals, convert them to audible audio for qualitative listening (to "hear" emerging faults), and apply spectral analysis via FFT to identify frequency signatures. To improve signal quality, we apply **Wiener filtering** for denoising, using only the denoised data for subsequent modeling. Finally, we evaluate time series modeling with LSTM to capture long-term dependencies and anomaly patterns in the 984-second recordings, where faults emerge around frame 500–540.
+
+<span style="color: maroon;"> **Dataset 2 Focus**: We focus exclusively on Dataset 2 (simpler 4-channel setup, 984 frames, fs=20480 Hz), loading **Channel 1** for Bearing 1 outer race fault analysis. This channel serves as the primary input for Wiener denoising and subsequent time-series modeling. </span>
+
+### Key Objectives
+- **Data Extraction & Preprocessing**: Load and segment the 16-minute recording into 984 one-second frames; normalize and prepare for consistency.
+- **Audio Visualization**: Generate WAV files from vibration signals (scaled to audible range) to qualitatively assess fault progression by ear.
+- **Spectral Insights**: Compute FFT to reveal harmonic peaks (e.g., BPFO/BPFI) indicative of bearing degradation.
+- **Denoising with Wiener Filter**:  
+  The Wiener filter is applied using a background noise estimate constructed from healthy frames (early part of the recording). Noise profile is derived from clean segments (e.g., frames 50–250), focusing on broadband noise characteristics while preserving the natural mechanical signatures of the rig (rotation harmonics, low-frequency modes). This approach avoids leakage from degradation signatures and ensures the filter targets only the unwanted noise floor.
+- **Advanced Modeling**:
+  - **LSTM**: Captures long-term dependencies in the filtered time series for anomaly scoring and early fault detection.
+
+The denoised signal serves as the primary input for modeling, enabling more reliable detection of subtle changes before traditional metrics (RMS, kurtosis) show clear degradation.
+
+## Main Results
+
+This section highlights the key outcomes from the analysis on the Wiener-denoised signal (Channel 1, Bearing 1 outer race fault). All figures are generated from the pipeline in this notebook.
+
+### 1. Wiener Denoising Effect – Frame 540
+
+Wiener filtering significantly reduces broadband noise while preserving fault-related features. The spectrum comparison on Frame 540 shows a cleaner noise floor and improved SNR on emerging high-frequency peaks (3000–7000 Hz), making degradation signatures more visible compared to the raw signal.
+
+<div align="center">
+<div style="text-align: center;">
+<img src="pictures/FFT_Frame540_Bearing1_Wiener.png" alt="FFT frame 540 wiener v. raw" width="70%" style="border:1px solid #ccc; border-radius:8px; padding:5px;">
+</div>     
+<div style="text-align: center;">
+<i>Figure 1: FFT magnitude comparison – Raw (gray) vs Wiener-denoised (maroon) on Frame 540. High-frequency peaks are clearly enhanced.</i>
+</div>        
+</div>
+
+
+### 2. Time-Domain Statistics: Raw vs Wiener Denoised
+
+Wiener denoising flattens the healthy baseline and sharpens fault indicators:
+- Mean: minimal variation in both cases (near zero, low diagnostic value).  
+- STD: overall level reduced; the "blip" (variance crushing ~470–530) becomes more defined, and the rise at ~540 is more pronounced.  
+- Skewness: slightly flatter after denoising (less sensitive).  
+- Kurtosis: much cleaner healthy baseline (close to 0 until ~540), with a sharper, more violent increase at 540 – the strongest early indicator.
+
+
+<div align="center">
+<div style="text-align: center;">
+<img src="pictures/Four_Moments_Vibration_Signals.png" alt="4 moments raw v. wiener" width="70%" style="border:1px solid #ccc; border-radius:8px; padding:5px;">
+</div>
+<div style="text-align: center;">
+<i>Figure 2: Evolution of mean, STD, skewness, and kurtosis – Raw (dashed) vs Wiener-denoised (solid). Denoising improves clarity, especially on kurtosis and STD.</i>
+</div>
+</div>
+
+### 3. LSTM Sequential Prediction on STD
+
+An LSTM model trained on healthy STD sequences (window=10, frames 0–300) predicts future STD values. The prediction closely tracks the actual STD during healthy and transitional phases, but shows a clear deviation starting around frame ~460–470, with a strong excursion at ~540. This confirms LSTM's ability to anticipate variance changes early.
+
+<div align="center">
+<div style="text-align: center;">
+<img src="pictures/LSTM_on_std.png" alt="LSTM on std Wiener" width="70%" style="border:1px solid #ccc; border-radius:8px; padding:5px;">
+</div>
+<div style="text-align: center;">
+<i>Figure 2: LSTM predicted STD (blue dashed) vs actual (red), with early deviation visible ~460–470 and strong rise at 540.</i>
+</div>
+</div>
+
+<br>
+These results demonstrate that Wiener denoising + LSTM on STD enables reliable early fault detection (\~460–470), significantly ahead of traditional thresholds (~540). Part II will explore custom bTSTFT features for even higher precocity/reliability.
+
+## Conclusions Part I
+
+Wiener denoising, using a noise vector constructed from healthy frames (filtered and averaged to capture broadband background noise while preserving rig harmonics), proved highly effective in enhancing the visibility of high-frequency harmonics (3000–7000 Hz) during early degradation. This preprocessing step significantly improved the clarity of time-domain statistics (STD, kurtosis) and sequential modeling.
+
+- **Time-domain features** (mean, STD, skewness, kurtosis): Wiener reduces baseline noise, making the subtle "variance crushing" blip (\~460–530) more defined and the sharp impulsivity spike at \~540 more pronounced. Kurtosis becomes a particularly clean and sensitive indicator after denoising.
+- **LSTM on STD**: Trained on healthy frames (50–250), the model anticipates variance changes with a pre-alarm at frame \~458 using a threshold of mean(healthy_std) + 1.5 × std(healthy_std). This is significantly earlier than the strong deviation at frame 540 (~9 minutes), demonstrating the value of sequential modeling on denoised features. **However, the threshold remains sensitive and carries some risk of false positives due to minor healthy fluctuations.**
+
+Wiener denoising stands out as the key enabler, delivering a cleaner signal that boosts both classical statistics and advanced modeling. While LSTM provides promising early alerts (~458), future work in Part II will leverage the custom bTSTFT transform and CNN autoencoder to achieve even more robust, precise, and risk-reduced early fault detection (~458–473 or better).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Phase I:  Preliminary Activities and datasets
+
 ## Overview
 This repository presents a comprehensive approach to early detection of bearing faults using custom digital signal processing (DSP) features derived from vibration data. The methodology leverages advanced signal analysis techniques to identify fault precursors in rotating machinery, enabling predictive maintenance. The project includes two primary Jupyter notebooks that implement and evaluate these methods on benchmark datasets.
 
