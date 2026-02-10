@@ -2,7 +2,7 @@
 
 
 <center>
-<h1>PHASE II - NASA Bearing Dataset:</h1>
+<h1>PHASE II - NASA Bearing Dataset</h1>
 <h1> Part I: Time Series & Spectral Analysis (FFT) with Wiener Denoising</h1><
 </center>
 
@@ -36,7 +36,7 @@ Wiener filtering significantly reduces broadband noise while preserving fault-re
 <img src="pictures/FFT_Frame540_Bearing1_Wiener.png" alt="FFT frame 540 wiener v. raw" width="70%" style="border:1px solid #ccc; border-radius:8px; padding:5px;">
 </div>     
 <div style="text-align: center;">
-<i>Figure 1: FFT magnitude comparison – Raw (gray) vs Wiener-denoised (maroon) on Frame 540. High-frequency peaks are clearly enhanced.</i>
+<i>Figure 1: FFT magnitude comparison – Raw vs Wiener-denoised on Frame 540. High-frequency peaks are clearly enhanced.</i>
 </div>        
 </div>
 
@@ -110,38 +110,44 @@ The following sections detail the loading, autoencoder architecture, MSE computa
 
 This section summarizes the key visual and quantitative results obtained from the pipeline on the Wiener-denoised signal (Part I) using the custom bTSTFT transform and CNN autoencoder.
 
-### Example of bTSTFT Transform
+### 1. Example of bTSTFT Transform
 
 The following image shows a representative bTSTFT matrix (magnitude + phase) from a surframe in the healthy zone. Note the symmetry with respect to the main diagonal, a natural property arising from the real-valued input signal and the Hermitian symmetry of its Fourier transform.
 
+<div align="center">
 <div style="text-align: center;">
 <img src="pictures/btstft_510.png" alt="Example bTSTFT matrix (magnitude + phase)" width="70%" style="border:1px solid #ccc; border-radius:8px; padding:5px;">
 </div>
 <div style="text-align: center;">
-<i>Figure 1: Example of a precomputed bTSTFT transform (256×256×2) from a surframe 510.</i>
+<i>Figure 4: Example of a precomputed bTSTFT transform (256×256×2) from a surframe 510.</i>
+</div>
 </div>
 
-### Reconstruction MSE on Test Set
+
+### 2. Reconstruction MSE on Test Set
 
 The reconstruction error (MSE per surframe) on the test portion (frames 300–800) shows a clear early deviation starting around frame 460–470, with a strong and sustained excursion above the threshold.
 
+<div align="center">
 <div style="text-align: center;">
 <img src="pictures/mse_reconstruction.png" alt="Example bTSTFT matrix (magnitude + phase)" width="80%" style="border:1px solid #ccc; border-radius:8px; padding:5px;">
 </div>
 <div style="text-align: center;">
-<i>Figure 2: MSE per surframe on train set and test set (300–800), <br> with P15/P85 healthy band (green) and early persistent deviation at ~460–470</i>
+<i>Figure 5: MSE per surframe on train set and test set (300–800), <br> with P15/P85 healthy band (green) and early persistent deviation at ~460–470</i>
+</div>
 </div>
 
-
-### CUSUM on MSE for Anomaly Detection
+### 3. CUSUM on MSE for Anomaly Detection
 
 CUSUM applied to the MSE sequence confirms a persistent deviation starting at ~460–470, providing a robust statistical alarm signal well before traditional metrics.
 
+<div align="center">
 <div style="text-align: center;">
 <img src="pictures/cusum_test_mse.png" alt="Example bTSTFT matrix (magnitude + phase)" width="65%" style="border:1px solid #ccc; border-radius:8px; padding:5px;">
 </div>
 <div style="text-align: center;">
-<i>Figure 3: CUSUM on MSE per surframe, showing early and persistent alarm at ~460–470.</i>
+<i>Figure 6: CUSUM on MSE per surframe, showing early and persistent alarm at ~460–470.</i>
+</div>
 </div>
 
 
@@ -157,8 +163,7 @@ CUSUM applied to the MSE sequence confirms a persistent deviation starting at ~4
 
 
 
-
-<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 # PHASE I:  Preliminary Activities and datasets
