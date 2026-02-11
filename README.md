@@ -10,7 +10,7 @@
 
 Time series analysis, spectral insights (FFT), Wiener denoising, LSTM on STD/kurtosis.
   
-[PHASE II - Part II: Early Fault Detection with Custom btstft Transform]() 
+[PHASE II - Part II: Early Fault Detection with Custom btstft Transform](https://github.com/DrStef/Bearing-Fault-Early-Detection-with-Custom-DSP-Features_v01/blob/main/NASA_Bearing_bTSTFT_f5_Wienerv10_ch1_v01.ipynb) 
 
 Loading precomputed bTSTFT tensors, autoencoder training, MSE reconstruction, mse std scoring, and cusum for robust early detection.
 
