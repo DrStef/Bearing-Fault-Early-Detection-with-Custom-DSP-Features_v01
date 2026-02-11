@@ -1,6 +1,17 @@
 <div align="center">
 <h1>Bearing Fault Early Detection with Custom DSP Features</h1>
 </div>
+<br>
+
+**Dr. Stéphane Dedieu** 
+<br>Applied Mathematics | Digital Signal Processing | ML  <br>
+Fall 2025 – January 2026  <br>
+<a href="https://www.linkedin.com/in/sdedieu/">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="30" height="30">
+</a>
+
+<br>
+
 
 **Early detection of bearing degradation in NASA IMS Dataset using denoising, custom bTSTFT transforms, and CNN autoencoder.**
 
@@ -18,7 +29,7 @@ Loading precomputed bTSTFT tensors, autoencoder training, MSE reconstruction, ms
 
 Precomputed tensors and plots (>1 GB) are hosted on Google Drive (public access):
 
-To be updated.... 
+- **Full dataset folder**:(https://drive.google.com/drive/folders/1zNxtHWyyTWtbG5AA7F6vE-u5J1OMWK4W?usp=sharing)
 
 Contains:
 - data_array_Wiener.npy (Wiener-denoised signal)
