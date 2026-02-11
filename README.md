@@ -14,6 +14,18 @@ Time series analysis, spectral insights (FFT), Wiener denoising, LSTM on STD/kur
 
 Loading precomputed bTSTFT tensors, autoencoder training, MSE reconstruction, mse std scoring, and cusum for robust early detection.
 
+### Data (large files)
+
+Precomputed tensors and plots (>1 GB) are hosted on Google Drive (public access):
+
+To be updated.... 
+
+Contains:
+- data_array_Wiener.npy (Wiener-denoised signal)
+- btstft_magnitude.npy & btstft_phase.npy (980 × 256 × 256)
+
+Note: The custom bTSTFT method remains confidential. For details, please contact me.
+
 ### Quick Summary
 Wiener denoising + custom bTSTFT enables very early fault detection (~57 surframes / ~285 frames ahead of traditional metrics). See Phase II for the core detection pipeline.
 
@@ -106,10 +118,9 @@ Wiener denoising, using a noise vector constructed from healthy frames (filtered
 
 Wiener denoising stands out as the key enabler, delivering a cleaner signal that boosts both classical statistics and advanced modeling. While LSTM provides promising early alerts (~458), future work in Part II will leverage the custom bTSTFT transform and CNN autoencoder to achieve even more robust, precise, and risk-reduced early fault detection (~458–473 or better).
 
-
-<center>
+<div align="center">
 <h1>Part II: Early Fault Detection with Custom btstft Transform</h1>
-</center>
+</div>
 
 ## Overview
 
